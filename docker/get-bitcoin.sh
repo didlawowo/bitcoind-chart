@@ -11,37 +11,39 @@ set -e
 #
 
 VERSIONS=(
-0.13.0
-0.13.1
-0.13.2
-0.14.3
-0.15.2
-0.16.3
-0.17.0
-0.17.0.1
-0.17.1
-0.17.2
-0.18.0
-0.18.1
-0.19.0.1
-0.19.1
-0.20.0
-0.20.1
-0.20.2
-0.21.0
-0.21.1
-0.21.2
-22.0
-23.0
-23.1
-24.0
-24.0.1
-25.0
-25.1
+  0.13.0
+  0.13.1
+  0.13.2
+  0.14.3
+  0.15.2
+  0.16.3
+  0.17.0
+  0.17.0.1
+  0.17.1
+  0.17.2
+  0.18.0
+  0.18.1
+  0.19.0.1
+  0.19.1
+  0.20.0
+  0.20.1
+  0.20.2
+  0.21.0
+  0.21.1
+  0.21.2
+  22.0
+  23.0
+  23.1
+  24.0
+  24.0.1
+  25.0
+  25.1
+  27.0
+  27.1
 )
 
 err() {
-  >&2 echo "$@"
+  echo >&2 "$@"
 }
 
 if [ ! -f /etc/debian_version ] && [ ! -f /etc/lsb_release ]; then
@@ -80,8 +82,8 @@ cd "$TMPDIR"
 curl -O "${URL_BASE}/SHA256SUMS.asc"
 curl -O "${URL_BASE}/${FILENAME}"
 
-# In version 22.0, release signing changed from a single key signing in 
-# SHA256SUMS.asc to multiple keys signing SHA256SUMS. 
+# In version 22.0, release signing changed from a single key signing in
+# SHA256SUMS.asc to multiple keys signing SHA256SUMS.
 #
 # See here for more information: https://github.com/bitcoin/bitcoin/pull/23020
 
